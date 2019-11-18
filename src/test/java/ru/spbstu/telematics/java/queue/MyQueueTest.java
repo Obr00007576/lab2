@@ -77,4 +77,17 @@ public class MyQueueTest
             Assert.assertEquals(a.pop(),b.get(i));
         }
     }
+    @Test
+    public void test_get() throws Exception
+    {
+        MyQueue<Integer>a=new MyQueue<Integer>();
+        for(int i=0;i<10;i++)
+        {
+            a.push(i);
+        }
+        for(int i=0;i<10;i++)
+        {
+            Assert.assertEquals((int)a.get(i),i);
+        }
+    }
 }

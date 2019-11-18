@@ -75,13 +75,29 @@ public class MyQueue<T> implements IMyQueue<T>,Iterable<T>
         tail=null;
         size=0;
     }
-    public MyQueue(Collection<? extends T> collection)
+    MyQueue(Collection<? extends T> collection)
     {
         size=0;
         for(T obj:collection)
         {
             size++;
             push(obj);
+        }
+    }
+    public T get(int index)
+    {
+        if(index<0||index>=size)
+        {
+            return null;
+        }
+        else
+        {
+            Node<T>p=head;
+            for(int i=0;i<index;i++)
+            {
+                p=p.getNext();
+            }
+            return p.getItem();
         }
     }
     private Node<T> head;
