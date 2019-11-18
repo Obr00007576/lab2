@@ -48,6 +48,9 @@ public class MyQueueTest
             a.push(i);
         }
         Assert.assertEquals(10, a.size());
+        a.pop();
+        a.pop();
+        Assert.assertEquals(8, a.size());
     }
     @Test
     public void test_contains() throws Exception
